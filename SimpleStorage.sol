@@ -34,14 +34,7 @@ contract SimpleStorage {
 // 4. Empty Contract Code Example
 
 // Solidity
-
-
-
-
 // pragma solidity >=0.8.11 <=0.8.13;
-
-
-
 // contract MyEmptyContract {
 
 // // This contract is empty but valid for compilation
