@@ -1,0 +1,10 @@
+{
+  "SimpleStorage.sol": {
+    "__sources__": {
+      "SimpleStorage.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract SimpleStorage {\n\n}\n\n// 1. What is an IDE and Remix's Main Features?\n\n// IDE stands for Integrated Development Environment. It is software that provides comprehensive facilities to programmers for software development, typically consisting of a source code editor, build automation tools, and a debugger.\n\n// Remix IDE Main Features:\n\n// Browser-based: No local setup required.\n\n// Integrated Compiler: Instant support for various Solidity versions.\n\n// Remix VM: A simulated blockchain environment in the browser for fast testing.\n\n// Debugger: Visual tool to track transaction execution step-by-step.\n\n// 2. The Use of the pragma Keyword\n\n// The pragma keyword specifies which Solidity compiler version should be used for the source file. This prevents the code from being compiled with a version that might introduce incompatible changes.\n\n// 3. What is Compiling a Contract?\n\n// The Ethereum Virtual Machine (EVM) cannot execute Solidity code directly. Compiling is the process of translating high-level Solidity code into:\n\n// Bytecode: The machine code deployed on the blockchain.\n\n// ABI (Application Binary Interface): A JSON-like map that allows external applications (like a website) to interact with the contract's functions.\n\n// 4. Empty Contract Code Example\n\n// Solidity\n\n\n\n\n// pragma solidity >=0.8.11 <=0.8.13;\n\n\n\n// contract MyEmptyContract {\n\n// // This contract is empty but valid for compilation\n\n// }",
+        "file": "SimpleStorage.sol"
+      }
+    }
+  }
+}
