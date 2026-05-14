@@ -30,5 +30,13 @@
         "file": "SecureVault.sol"
       }
     }
+  },
+  "SmartPiggyBank.sol": {
+    "__sources__": {
+      "SmartPiggyBank.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract SmartPiggyBank {\n    uint256 public targetAmount = 1000000;\n    uint256 public currentBalance = 100000;\n    string public savingsGoal = \"Beli BTC\";\n    bool public isFull = false;\n\n    function addMoney(uint256 _amount) public {\n        currentBalance += _amount;\n        checkIsFull();\n    }\n    function checkIsFull() internal {\n        if (currentBalance >= targetAmount) isFull = true;\n    }\n    function getProgress() public view returns (uint256) {\n                if (currentBalance >= targetAmount) {\n            return 0;\n        }\n        return targetAmount - currentBalance;\n    }\n    function updateGoal(string memory _newGoal) public {\n        savingsGoal = _newGoal;\n    }\n}",
+        "file": "SmartPiggyBank.sol"
+      }
+    }
   }
 }
