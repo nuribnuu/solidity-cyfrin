@@ -45,24 +45,24 @@
 // Berikut adalah contoh Smart Contract sederhana dengan 5 tipe data yang berbeda di *storage*:
 
 // ```solidity
-// // SPDX-License-Identifier: MIT
-// pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-// contract MyStorageContract {
-//     // 1. Tipe data angka bulat (Default: 0)
-//     uint256 public myNumber = 42;
+contract MyStorageContract {
+    // 1. Tipe data angka bulat (Default: 0)
+    uint256 public myNumber = 42;
 
-//     // 2. Tipe data teks (Default: "")
-//     string public myName = "Ibnu";
+    // 2. Tipe data teks (Default: "")
+    string public myName = "Ibnu";
 
-//     // 3. Tipe data alamat dompet (Default: 0x0...)
-//     address public owner = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    // 3. Tipe data alamat dompet (Default: 0x0...)
+    address public owner = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 
-//     // 4. Tipe data benar/salah (Default: false)
-//     bool public isActive = true;
+    // 4. Tipe data benar/salah (Default: false)
+    bool public isActive = true;
 
-//     // 5. Tipe data tetap 32 byte (Default: 0x0...)
-//     bytes32 public secretID = 0xabc1230000000000000000000000000000000000000000000000000000000000;
-// }
+    // 5. Tipe data tetap 32 byte (Default: 0x0...)
+    bytes32 public secretID = 0xabc1230000000000000000000000000000000000000000000000000000000000;
+}
 
 // ```
