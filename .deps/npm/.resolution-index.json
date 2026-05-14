@@ -22,5 +22,13 @@
         "file": "SimpleStorage2.sol"
       }
     }
+  },
+  "SecureVault.sol": {
+    "__sources__": {
+      "SecureVault.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract SecureVault {\n    string public ownerName = \"Ibnu\";\n    uint256 private vaultPin;\n    bool internal isLocked = false;\n\n    function getVaultStatus() public view returns (bool) {\n        return isLocked;\n    }\n    function generateHint(uint256 inputNumber) public pure returns (uint256) {\n        return inputNumber * 2;\n    } \n    function lockVault() internal {\n        isLocked = true;\n    }\n    function updatePin(uint256 newPin) public {\n        vaultPin = newPin;\n        lockVault();\n    }\n    function checkPin() public view returns (uint256) {\n        return vaultPin;\n    }\n}",
+        "file": "SecureVault.sol"
+      }
+    }
   }
 }
