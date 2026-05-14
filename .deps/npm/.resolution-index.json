@@ -38,5 +38,13 @@
         "file": "SmartPiggyBank.sol"
       }
     }
+  },
+  "SimpleStorage3.sol": {
+    "__sources__": {
+      "SimpleStorage3.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract AnimalRegistry {\n    struct Animal {\n        string name;\n        string species;\n    }\n\n    Animal[] public animals;\n\n    constructor() {\n        animals.push(Animal(\"Kucing\", \"Mamalia\"));\n        animals.push(Animal(\"Elang\", \"Burung\"));\n        animals.push(Animal(\"Hiu\", \"Ikan\"));\n    }\n\n    function addAnimal(string memory _name, string memory _species) public {\n        animals.push(Animal(_name, _species));\n    }\n    function getAnimalCount() public view returns (uint256) {\n        return animals.length;\n    }\n}",
+        "file": "SimpleStorage3.sol"
+      }
+    }
   }
 }
