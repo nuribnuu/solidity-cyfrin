@@ -46,5 +46,21 @@
         "file": "SimpleStorage3.sol"
       }
     }
+  },
+  "Soal3.sol": {
+    "__sources__": {
+      "Soal3.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract Soal3 {\n    struct Student {\n        string name;\n        uint256 grade;\n    }\n    Student[] public students;\n\n    function addStudent(string calldata _name, uint256 _grade) public {\n        students.push(Student(_name, _grade));\n    }\n\n    function updateGrade(uint256 _index) public {\n        Student storage student = students[_index];\n        student.grade = 80;\n    }\n\n    function getStudent(uint256 _index) public view returns (Student memory) {\n        Student memory student = students[_index];\n\n        return student;\n    }\n}",
+        "file": "Soal3.sol"
+      }
+    }
+  },
+  "SistemInventarisToko.sol": {
+    "__sources__": {
+      "SistemInventarisToko.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract SistemInventarisToko {\n    struct Item {\n        string name;\n        uint256 price;\n        uint256 stock;\n    }\n    Item[] public items;\n\n    // addItem\n    // function addItem(string calldata _name, uint256 _price, uint256 _stock) public {\n    //     items.push(Item(_name, _price, _stock));\n    // }\n    function addItem(string calldata _name, uint256 _price) public {\n        items.push(Item(_name, _price, 0));\n    }\n\n    // restockItem\n    function restockItem(uint256 _index, uint256 _stock) public {\n        Item storage item = items[_index];\n        item.stock += _stock;\n    }\n    // applyDiscount\n    function applyDiscount(uint256 _price, uint256 _discount) private pure returns (uint256) {\n        return _price - (_price * _discount / 100);\n    }\n    // getItem\n    function getItem(uint256 _index) public view returns (Item memory) {\n        return items[_index];\n    }\n    // updatePrice\n    function updatePrice(uint256 _index, uint256 _price, uint256 _discount) public {\n        Item storage item = items[_index];\n        item.price = applyDiscount(_price, _discount);\n    }\n}",
+        "file": "SistemInventarisToko.sol"
+      }
+    }
   }
 }
