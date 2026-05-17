@@ -1,0 +1,10 @@
+{
+  "@chainlink/contracts@1.5.0/src/v0.8/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8//interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8//interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8/s/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/s/interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8/sh/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/sh/interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8/sha/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/sha/interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8/shar/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shar/interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8/share/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/share/interfaces/AggregatorV3Interface.sol",
+  "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
+}

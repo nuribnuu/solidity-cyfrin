@@ -4,7 +4,47 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "number",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "retreive",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "store",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -18,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage.sol": "SimpleStorage"
+			"StorageFactory/SimpleStorage.sol": "SimpleStorage"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -32,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"SimpleStorage.sol": {
-			"keccak256": "0xe8236866bb5f34438f6a69029b5141ab64e377676a191173d6db7c0ba45104b7",
+		"StorageFactory/SimpleStorage.sol": {
+			"keccak256": "0xfbc676edf9188f85f623ddc771e218b9629213d565c21e863b7298570aa832ab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9a40117ac300da1541d5db44f00845b5c50fce3d284749cf227526086e063184",
-				"dweb:/ipfs/QmSJu3RmC1Eoc19J7i3DbqVTG7aATJ78V27hrbsgRbx7Dr"
+				"bzz-raw://dc53af4dc9c07287ca8e6fcc3e8adba92c3e0b58d5dd221bbb0193144def5199",
+				"dweb:/ipfs/QmVqzhsQAwB47j2PEoZHoi92KNGFAYTk7TgkNYPnjoXe2z"
 			]
 		}
 	},

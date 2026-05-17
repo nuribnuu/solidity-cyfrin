@@ -62,5 +62,31 @@
         "file": "SistemInventarisToko.sol"
       }
     }
+  },
+  "StorageFactory/StoraeFactory.sol": {
+    "./SimpleStorage.sol": "StorageFactory/SimpleStorage.sol",
+    "__sources__": {
+      "StorageFactory/StoraeFactory.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\nimport {SimpleStorage} from './SimpleStorage.sol';\n\ncontract StorageFactory {\n    SimpleStorage[] public simpleStorages;\n\n    function createSimpleStorageContract() public {\n        SimpleStorage newStorage = new SimpleStorage();\n\n        simpleStorages.push(newStorage);\n    }\n\n    function sfStore(uint256 _index, uint256 _number) public {\n        simpleStorages[_index].store(_number);\n    }\n    function sfGet(uint256 _index) public view returns (uint256) {\n        return simpleStorages[_index].retrieve();\n    }\n}",
+        "file": "StorageFactory/StoraeFactory.sol"
+      },
+      "StorageFactory/SimpleStorage.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\ncontract SimpleStorage {\n    uint256 public number;\n\n    function store(uint256 _number) public {\n        number = _number;\n    }\n    function retrieve() public view returns (uint256) {\n        return number;\n    }\n }",
+        "file": "StorageFactory/SimpleStorage.sol"
+      }
+    }
+  },
+  "FundMe.sol": {
+    "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+    "__sources__": {
+      "FundMe.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.34;\n\nimport {AggregatorV3Interface} from \"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol\";\n\ncontract FundMe {\n    uint256 public constant MINIMUM_USD = 5 * 1e18;\n\n    address[] public funders;\n\n    mapping(address => uint256) public addressToAmountFunded;\n\n    AggregatorV3Interface internal priceFeed;\n\n    constructor(address priceFeedAddress) {\n        priceFeed = AggregatorV3Interface(priceFeedAddress);\n    }\n\n    function getLatestPrice() public view returns (uint256) {\n        (, int256 price, , , ) = priceFeed.latestRoundData();\n        require(price > 0, \"Oracle data invalid\");\n\n        return uint256(price) * 1e10;\n    }\n\n    function getConversionRate(uint256 ethAmount) public view returns (uint256) {\n        require(ethAmount > 0, \"ETH amount must more than 0\");\n\n        uint256 ethPrice = getLatestPrice();\n\n        uint256 ethAmountInUsd = (ethAmount * ethPrice) / 1e18;\n\n        return ethAmountInUsd;\n        // return (ethAmount * getLatestPrice()) / 1e18;\n    }\n\n    function fund() public payable {\n        require(getConversionRate(msg.value) >= MINIMUM_USD, \"Minimum 5 USD\");\n\n        funders.push(msg.sender);\n        addressToAmountFunded[msg.sender] += msg.value;\n    }\n}",
+        "file": "FundMe.sol"
+      },
+      "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n// solhint-disable-next-line interface-starts-with-i\ninterface AggregatorV3Interface {\n  function decimals() external view returns (uint8);\n\n  function description() external view returns (string memory);\n\n  function version() external view returns (uint256);\n\n  function getRoundData(\n    uint80 _roundId\n  ) external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n\n  function latestRoundData()\n    external\n    view\n    returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n}\n",
+        "file": "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
+      }
+    }
   }
 }
